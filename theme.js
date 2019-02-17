@@ -1,10 +1,35 @@
-import { future } from 'mdx-deck/themes'
+import { dark } from 'mdx-deck/themes'
 import nightOwl from "prism-react-renderer/themes/nightOwl"
 import okaidia from 'react-syntax-highlighter/styles/prism/okaidia'
 import clojure from 'react-syntax-highlighter/languages/prism/clojure'
 
-export default {
-  ...future,
+// THEMES:
+// base
+// big
+// book
+// code
+// comic
+// condensed
+// dark
+// future
+// hack
+// index
+// lobster
+// notes
+// rye
+// script
+// swiss
+// yellow
+
+const theme = {
+  ...dark,
+  fontSizes: [
+    "0.75em",
+    "1em",
+    "1em",
+    "1em",
+    "1em",
+  ],
   codeSurfer: {
     ...nightOwl,
     showNumbers: false
@@ -15,10 +40,6 @@ export default {
       clojure
     }
   }
-  // Customize your presentation theme here.
-  //
-  // Read the docs for more info:
-  // https://github.com/jxnblk/mdx-deck/blob/master/docs/theming.md
-  // https://github.com/jxnblk/mdx-deck/blob/master/docs/themes.md
-
 }
+
+export default theme
