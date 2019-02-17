@@ -9,7 +9,3 @@ function HelloWorld(props) {
 }
 
 export default HelloWorld
-
-// or
-
-const HelloWorld = ({ name }) => <div>Hello {name}</div>

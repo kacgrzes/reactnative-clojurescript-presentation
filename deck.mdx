@@ -61,9 +61,50 @@ Occasionally mentror / trainer
 ---
 
 <Example
-  cljs={ex1cljs}
-  js={ex1js}
+  cljs={require("!raw-loader!./snippets/1.cljs")}
+  js={[
+    require("!raw-loader!./snippets/1.js"),
+    require("!raw-loader!./snippets/1-2.js"),
+  ]}
 />
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!./snippets/2.cljs")}
+  js={require("!raw-loader!./snippets/2.js")}
+/>
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!./snippets/2.cljs")}
+  js={require("!raw-loader!./snippets/2-2.js")}
+/>
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!./snippets/3.cljs")}
+  js={require("!raw-loader!./snippets/3.js")}
+/>
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!./snippets/3-2.cljs")}
+  js={require("!raw-loader!./snippets/3-2.js")}
+/>
+
+---
+
+## Learn more about reagent at [learnreagent.com](https://www.learnreagent.com/)
+
+(this is not sponsored)
 
 ---
 
