@@ -26,9 +26,9 @@ const theme = {
   fontSizes: [
     "0.75em",
     "1em",
-    "1em",
-    "1em",
-    "1em",
+    "1.5em",
+    "2em",
+    "3em",
   ],
   codeSurfer: {
     ...nightOwl,

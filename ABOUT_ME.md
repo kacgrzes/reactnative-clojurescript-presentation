@@ -1,0 +1,1 @@
+I'm front-end / mobile developer focusing on react / react-native technologies and laverage them to create full functional cross-platform apps. I'm highly intrested in trying new programming languages (especially those set in functional paradigm) and trying to apply different mindsets in my code.

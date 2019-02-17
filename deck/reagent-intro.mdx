@@ -1,0 +1,85 @@
+# React
+
+- where is React in ClojureScript?
+
+---
+
+## Hiccup syntax
+
+- simple data structure
+- compared to JSX which is a syntax extension to JavaScript
+
+---
+
+## React wrappers
+
+- what is a wrapper?
+- what are the options?
+- no wrapper?
+
+---
+
+## React - without wrapper
+
+```jsx
+function ({ text }) {
+  return React.createComponent('div', { className: 'app' }, text)
+}
+```
+
+```clojure
+(fn [text]
+  (js/React.createComponent "div" #js { "class" "app" } text))
+```
+
+---
+
+## [Om](https://github.com/omcljs/om)
+
+```clojure
+(ns om-tutorial.core
+  (:require [goog.dom :as gdom]
+            [om.next :as om :refer-macros [defui]]
+            [om.dom :as dom]))
+
+(defui HelloWorld
+  Object
+  (render [this]
+    (dom/div nil (get (om/props this) :title))))
+
+(def hello (om/factory HelloWorld))
+
+(js/ReactDOM.render
+  (hello {:title "Hello, world!"})
+  (gdom/getElement "app"))
+```
+
+---
+
+## Rum
+
+```clojure
+(ns rum-example.core
+  (:require [rum.core :as rum]))
+
+(rum/defc hello [text]
+  [:div "Hello " text])
+
+(defn refresh []
+  (rum/mount (hello "Reactup!") (js/document.getElementById "mount")))
+```
+
+---
+
+## Reagent
+```clojure
+(ns example
+  (:require [reagent.core :as r]))
+
+(defn hello [text]
+  [:div text])
+
+(defn init []
+  (r/render [hello]
+    (.getElementById js/document "app")))
+```

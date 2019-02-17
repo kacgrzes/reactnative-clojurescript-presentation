@@ -1,0 +1,65 @@
+import { Example } from 'components'
+
+# Reagent
+
+---
+
+<Example
+  cljs={require("!raw-loader!snippets/1.cljs")}
+  js={[
+    require("!raw-loader!snippets/1.js"),
+    require("!raw-loader!snippets/1-2.js"),
+  ]}
+/>
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!snippets/2.cljs")}
+  js={require("!raw-loader!snippets/2.js")}
+/>
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!snippets/2.cljs")}
+  js={require("!raw-loader!snippets/2-2.js")}
+/>
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!snippets/3.cljs")}
+  js={require("!raw-loader!snippets/3.js")}
+/>
+
+---
+
+<Example
+  fontSize={"14px"}
+  cljs={require("!raw-loader!snippets/3-2.cljs")}
+  js={require("!raw-loader!snippets/3-2.js")}
+/>
+
+---
+
+## What about hooks?
+
+---
+
+![what about hooks?](./images/what-about-hooks-1.png)
+
+---
+
+![what about hooks?](./images/what-about-hooks-2.png)
+
+---
+
+## Learn re-agent
+
+[reagent todomvc](https://github.com/tastejs/todomvc/tree/gh-pages/examples/reagent/src/cljs/todomvc)
+
+---

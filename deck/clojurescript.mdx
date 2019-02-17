@@ -1,0 +1,210 @@
+import { Example } from 'components'
+
+# ClojureScript
+
+---
+
+## What is ClojureScript?
+
+- Clojure in JavaScript world
+- [ClojureScript compiler](https://github.com/clojure/clojurescript) - compiles clojurescript to javascript
+- [Google Clojure Compiler](https://developers.google.com/closure/compiler/) - compiles javascript to "better javascript"
+
+```notes
+ClojureScript compiler and renames variables 
+to shorter names, removes whitespace, removes 
+comments, etc. in an effort to reduce the 
+source size while maintaining the program 
+semantics.
+```
+
+---
+
+## Is anybody using it?
+- [Circle CI](https://github.com/circleci/frontend)
+- [eBay](https://www.ebay.com/)
+- [Cisco Threat Grid](https://www.cisco.com/c/en/us/products/security/threat-grid/index.html)
+- [More](https://github.com/clojure/clojurescript-site/blob/master/content/community/companies.adoc)
+- [walmart](https://github.com/walmartlabs/lacinia)
+- [Netflix](https://speakerdeck.com/daveray/clojure-at-netflix)
+- [SoundCloud](http://blog.josephwilk.net/clojure/building-clojure-services-at-scale.html)
+
+---
+
+## Where to learn?
+
+- [ClojureScript koans](http://clojurescriptkoans.com/)
+- [magomimmo/modern-cljs](https://github.com/magomimmo/modern-cljs)
+- [clojurescriptmadeeasy.com](http://clojurescriptmadeeasy.com/)
+- [parens-of-the-dead](http://www.parens-of-the-dead.com/)
+- [clojurescript-unraveled](https://funcool.github.io/clojurescript-unraveled/)
+- [cljsbook](http://langintro.com/cljsbook/)
+- [awesome-clojurescript](- https://github.com/hantuzun/awesome-clojurescript)
+
+---
+
+## ClojureScript vs JavaScript
+
+---
+
+<Example
+  title={'Basics'}
+  cljs={[
+    '"string"',
+    '; Cannot use single quote strings',
+    'true false',
+    'nil',
+    ':keyword',
+    '42',
+    '223.44'
+  ]}
+  js={[
+    '"string"',
+    "'string'",
+    'true false',
+    'null',
+    '// Does not support keywords',
+    '42',
+    '223.44'
+  ]}
+/>
+
+---
+
+<Example
+  title={'Collections'}
+  cljs={[
+    '[1 2 3 4] ; vector',
+    '{:one 1 :two 2} ; map',
+    '#{1 2 3} ; set'
+  ]}
+  js={[
+    '[1, 2, 3, 4] // array',
+    '{one 1, two 2} // object',
+    'new Set(1, 2, 3) // set'
+  ]}
+/>
+
+---
+
+<Example
+  title={'Functions'}
+  cljs={[
+    '(defn sum [x y] (+ x y))',
+    '(sum 3 4)',
+    '(fn [x y] (+ x y))',
+    '(#(+ %1 %2))',
+    '(def sum #(+ %1 %2))',
+  ]}
+  js={[
+    `function sum(x, y) {
+  retrun x + y
+}`,
+    'sum(3, 4)',
+    `function (x, y) {
+  retrun x + y
+}`,
+    '(x, y) => x + y',
+    'const sum = (x, y) => x + y',
+  ]}
+/>
+
+---
+
+<Example
+  title={'Flow control'}
+  cljs={[
+    '(when (= lang "de") "german") ; if without else',
+    '(if (= lang "de") "german" "english) ; if with else',
+    `; if with multiple elses
+(defn which-lang
+  [lang]
+  (cond
+    (= lang "de") "german"
+    (= lang "es") "spanish"
+    :else "english"))`
+  ]}
+  js={[
+    `if (lang === 'de') {
+  return 'german';
+}`,
+    `if (lang === 'de') {
+  return 'german';
+} else {
+  return 'english';
+}`, `function whichLang(lang) {
+  if (lang === 'de') {
+    return 'german';
+  } else if (lang === 'es') {
+    return 'spanish';
+  } else {
+    return 'english';
+  }
+}`
+  ]}
+/>
+
+---
+
+<Example
+  title={'More flow control'}
+  cljs={[
+    `; switch
+(defn which-lang
+  [lang]
+  (case lang
+    "de" "german"
+    "es" "spanish"
+    "english"))
+`
+  ]}
+  js={[`function whichLang(lang) {
+  switch (lang) {
+    case 'de':
+      return 'german';
+    case 'es':
+      return 'spanish';
+    default:
+      return 'english';
+  }
+}`
+  ]}
+/>
+
+---
+
+<Example
+  title={'Interop'}
+  cljs={[
+    `; Method call
+(.log js/console "Hello")`,
+    `; Property access
+(.-PI js/Math)`,
+    `; Property setting
+(set! (.-title js/document) "Hello")`,
+    `; window method call
+(js/alert "Hello")`
+  ]}
+  js={[
+    `// Method call
+console.log("Hello")`,
+    `// Property access
+Math.PI`,
+    `// Property setting
+num.one = 1`,
+    `// window method call
+alert("Hello")`
+  ]}
+/>
+
+---
+
+<Example
+  title={'State'}
+  cljs={[
+    '(atom {:one 1 :two 2}) ; atom'
+  ]}
+  js={[
+    '// requires redux / mobx'
+  ]}
+/>
