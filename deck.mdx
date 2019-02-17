@@ -1,12 +1,69 @@
-import { Head } from 'mdx-deck'
+import { Head, Code, components } from 'mdx-deck'
+import Example from './Example'
+import { ex1cljs, ex1js } from './examples'
 
 export { default as theme } from './theme'
+const { h2 } = components
 
 <Head>
-  <title>Presentation Title</title>
+  <title>React'Up #10 - ClojureScript + React-Native = Fun</title>
 </Head>
 
-# Hello
+# Reactup #10
+
+## ClojureScript + React-Native = Fun
+
+---
+
+# Who am I?
+
+Front-end / mobile dev using react and react-native to create web and mobile apps
+
+Occasionally mentror / trainer
+
+---
+
+## What is Clojure ?
+
+- functional programming language
+- dialect of Lisp
+
+```notes
+- how many of you guys have heard about Clojure?
+- how many have ever tried Clojure or any lispy language?
+```
+
+---
+
+## Idea of Clojure
+
+- code-as-data
+- macro system
+- "almost no syntax"
+
+## Difference between Lisp
+
+- only immutable data structures
+- embraces JVM platfrom
+
+---
+
+## Clojure basics
+
+[Cheatsheet here](https://cljs.info/cheatsheet/)
+
+---
+
+## ClojureScript vs JavaScript
+
+[Translations from JavaScript](https://kanaka.github.io/clojurescript/web/synonym.html)
+
+---
+
+<Example
+  cljs={ex1cljs}
+  js={ex1js}
+/>
 
 ---
 
