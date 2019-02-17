@@ -1,17 +1,71 @@
+import { Td, Th } from 'components'
+
 # Tooling
+
+---
+
+## Repl
+
+- [clojure repl](https://clojure.org/guides/repl/introduction)
+- [nREPL](https://github.com/nrepl/nrepl)
+- [unREPL](https://github.com/Unrepl/unrepl)
+- [ultra](https://github.com/venantius/ultra)
+- [party repl](https://www.youtube.com/watch?v=AJING0Vigpg)
+- [Cider](https://github.com/clojure-emacs/cider)
+- [The ultimate Guide to Clojure REPLs](https://lambdaisland.com/guides/clojure-repls)
+- [A Clojure Development Environment That Gets Out of Your Way](https://medium.com/@daniel.oliver.king/a-clojure-development-environment-that-gets-out-of-your-way-c11e6711ead3)
+
+```notes
+nREPL - network REPL - provides server and client to connect to REPL from remote environment.
+```
+
+---
 
 ## Leiningen
 
-- leiningen
-    - Repl
-        - Inne reple:
-        - nREPL
-        - unREPL
-    - Lepszy repl: https://github.com/venantius/ultra
-    - co to jest, gdzie mój babel i webpack?
+- [Official Clojure CLI](https://clojure.org/guides/getting_started)
+- [Leiningen](https://leiningen.org/)
+- [Boot](https://boot-clj.com/)
+- [shadow-cljs](http://shadow-cljs.org/)
+- what is that how can I compare that to JavaScript
 
-# Boot
+---
 
-- https://github.com/boot-clj/boot
+<table>
+  <tbody>
+    <tr>
+      <Th></Th>
+      <Th>JavaScript</Th>
+      <Th>Clojure</Th>
+    </tr>
+    <tr>
+      <Th>Project Scaffolding</Th>
+      <Td>Grunt / Slush / Yeoman</Td>
+      <Td>Leiningen</Td>
+    </tr>
+    <tr>
+      <Th>Build Tool</Th>
+      <Td>Webpack / Grunt / Gulp / Browserify</Td>
+      <Td>Leiningen</Td>
+    </tr>
+    <tr>
+      <Th>Package Manager</Th>
+      <Td>npm / yarn / bower</Td>
+      <Td>Leiningen</Td>
+    </tr>
+    <tr>
+      <Th>Major Framework</Th>
+      <Td>Angular / Ember / React/Redux / Vue / Backbone / Knockout</Td>
+      <Td>om.next / reagent/re-frame</Td>
+    </tr>
+  </tbody>
+</table>
+
+---
 
 ## Figwheel
+
+- [Figwheel](https://figwheel.org/)
+- build ClojureScript code and hot loads it
+- live CSS reloading
+- live JavaScript reloading

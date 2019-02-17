@@ -48,9 +48,29 @@ import { Image } from 'mdx-deck'
 ## Code as data
 
 ``` clojure
+(foo bar baz qux)
+
+; code:
+; call the function bound to the name “foo”
+; with the values bound to the names “bar”, “baz” and “qux”.
+
+; data:
+; list of 4 symbols, “foo”, “bar”, “baz” and “qux”.
+
 (+ 1 1) ; 2
 '(+ 1 1 ) ; a list of a function and two numbers 
 ```
+
+---
+
+## Is anybody using it?
+- [Circle CI](https://github.com/circleci/frontend)
+- [eBay](https://www.ebay.com/)
+- [Cisco Threat Grid](https://www.cisco.com/c/en/us/products/security/threat-grid/index.html)
+- [walmart](https://github.com/walmartlabs/lacinia)
+- [Netflix](https://speakerdeck.com/daveray/clojure-at-netflix)
+- [SoundCloud](http://blog.josephwilk.net/clojure/building-clojure-services-at-scale.html)
+- [More](https://github.com/clojure/clojurescript-site/blob/master/content/community/companies.adoc)
 
 ---
 
@@ -60,3 +80,4 @@ import { Image } from 'mdx-deck'
 - [clojure-for-the-brave-and-true](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
 - [purelyfunctional.tv](https://purelyfunctional.tv/)
 - [clojuredocs.org](https://clojuredocs.org/)
+- [awesome-clojure](https://github.com/razum2um/awesome-clojure)

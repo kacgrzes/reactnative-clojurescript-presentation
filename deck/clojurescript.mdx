@@ -20,29 +20,6 @@ semantics.
 
 ---
 
-## Is anybody using it?
-- [Circle CI](https://github.com/circleci/frontend)
-- [eBay](https://www.ebay.com/)
-- [Cisco Threat Grid](https://www.cisco.com/c/en/us/products/security/threat-grid/index.html)
-- [More](https://github.com/clojure/clojurescript-site/blob/master/content/community/companies.adoc)
-- [walmart](https://github.com/walmartlabs/lacinia)
-- [Netflix](https://speakerdeck.com/daveray/clojure-at-netflix)
-- [SoundCloud](http://blog.josephwilk.net/clojure/building-clojure-services-at-scale.html)
-
----
-
-## Where to learn?
-
-- [ClojureScript koans](http://clojurescriptkoans.com/)
-- [magomimmo/modern-cljs](https://github.com/magomimmo/modern-cljs)
-- [clojurescriptmadeeasy.com](http://clojurescriptmadeeasy.com/)
-- [parens-of-the-dead](http://www.parens-of-the-dead.com/)
-- [clojurescript-unraveled](https://funcool.github.io/clojurescript-unraveled/)
-- [cljsbook](http://langintro.com/cljsbook/)
-- [awesome-clojurescript](- https://github.com/hantuzun/awesome-clojurescript)
-
----
-
 ## ClojureScript vs JavaScript
 
 ---
@@ -90,7 +67,8 @@ semantics.
 <Example
   title={'Functions'}
   cljs={[
-    '(defn sum [x y] (+ x y))',
+    `; NOTE: there are no operators in Clojure / ClojureScript, "+" is just a normal function
+(defn sum [x y] (+ x y))`,
     '(sum 3 4)',
     '(fn [x y] (+ x y))',
     '(#(+ %1 %2))',
@@ -205,6 +183,18 @@ alert("Hello")`
     '(atom {:one 1 :two 2}) ; atom'
   ]}
   js={[
-    '// requires redux / mobx'
+    '// requires redux / mobx / or any other state management library'
   ]}
 />
+
+---
+
+## Where to learn?
+
+- [ClojureScript koans](http://clojurescriptkoans.com/)
+- [magomimmo/modern-cljs](https://github.com/magomimmo/modern-cljs)
+- [clojurescriptmadeeasy.com](http://clojurescriptmadeeasy.com/)
+- [parens-of-the-dead](http://www.parens-of-the-dead.com/)
+- [clojurescript-unraveled](https://funcool.github.io/clojurescript-unraveled/)
+- [cljsbook](http://langintro.com/cljsbook/)
+- [awesome-clojurescript](https://github.com/hantuzun/awesome-clojurescript)
