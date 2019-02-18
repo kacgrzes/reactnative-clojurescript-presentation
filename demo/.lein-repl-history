@@ -1,0 +1,7 @@
+(exit)
+(in-ns react-up-demo.ios.core)
+(in-ns 'react-up-demo.ios.core')
+(alert 'hello')
+(start-figwheel "ios")
+(exit)
+(start-figwheel "ios")
