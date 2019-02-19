@@ -2,7 +2,7 @@
   (:require [re-native.core :refer [touchable-opacity text slider slider] :rename {slider rn-slider}]
             [reagent.core :as r]))
 
-(defn button []
+(defn button [{:keys [title]}]
   [touchable-opacity
    {:style {
             :padding 10
@@ -11,7 +11,7 @@
             :border-color "red"
             :border-radius 50
             }}
-   [text "hello!"]])
+   [text title]])
 
 (defn slider [{:keys [step min max style thumb-tint-color minimum-track-tint-color maximum-track-tint-color value]}]
   [rn-slider {
