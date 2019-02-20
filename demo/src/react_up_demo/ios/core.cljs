@@ -3,14 +3,15 @@
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
             [react-up-demo.events]
             [react-up-demo.subs]
-            [re-native.core :refer [text view image touchable-highlight app-registry react-native]]
+            [re-native.core :refer [text text-input view image touchable-highlight app-registry react-native]]
             [re-native.navigation :refer [create-app-container create-stack-navigator create-bottom-tab-navigator]]
             [react-up-demo.shared.ui :refer [volume-slider
                                              circle-button-with-icon
                                              power-button
                                              minus-button
                                              add-button]]
-            [react-up-demo.shared.styles :refer [styles] :rename {styles s}]))
+            [react-up-demo.shared.styles :refer [styles] :rename {styles s}]
+            [react-up-demo.ios.playground :refer [playground-screen bmi-screen]]))
 
 (def logo-img (js/require "./images/cljs.png"))
 
@@ -51,7 +52,9 @@
                  {:home (r/create-class {:reagent-render home-screen})}))
 
 (def tab-router {:home (r/reactify-component home-stack)
-                 :counter (r/reactify-component counter)})
+                 :counter (r/reactify-component counter)
+                 :playground (r/reactify-component playground-screen)
+                 :bmi (r/reactify-component bmi-screen)})
 
 (def tab-navigator (create-bottom-tab-navigator tab-router))
 
