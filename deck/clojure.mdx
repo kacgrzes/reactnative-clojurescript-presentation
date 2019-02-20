@@ -1,17 +1,9 @@
 import { Example } from 'components'
 import { Box } from 'rebass'
 import { Image } from 'mdx-deck'
+import { CodeSurfer } from "mdx-deck-code-surfer"
 
 # Clojure
-
----
-
-## What is Clojure ?
-
-- programming language created by [Rick Hickey](https://twitter.com/richhickey)
-- multiparadigm programming language
-- with a functional programming language lean
-- dialect of Lisp
 
 ```notes
 - how many of you guys have heard about Clojure?
@@ -20,17 +12,30 @@ import { Image } from 'mdx-deck'
 
 ---
 
+## What is Clojure ?
+
+- programming language created by [Rick Hickey](https://twitter.com/richhickey)
+- multiparadigm programming language
+- with a functional programming lean
+- dialect of Lisp
+
+```notes
+some ideas later
+```
+
+---
+
 ## Who is Rick Hickey?
 
-![joy of programming](images/joy-of-programming.jpg)
+![bobross](images/bobrosspainting.jpg)
 
 ---
 
 <Box>
   <h2>Rick Hickey</h2>
   <p>Bob Ross of programming</p>
-  <Image src={'images/rick-hickey.jpg'} height={'200px'} width={'25vw'} />
-  <Image src={'images/bob-ross.png'} height={'200px'} width={'25vw'} />
+  <Image src={'images/rick-hickey.jpg'} height={'300px'} width={'35vw'} />
+  <Image src={'images/bob-ross.png'} height={'350px'} width={'35vw'} />
 </Box>
 
 ---
@@ -43,23 +48,28 @@ import { Image } from 'mdx-deck'
 - data oriented (code-as-data)
 - macro system - takes code and returns new code
 
+```notes
+macro system uses code-as-data to extend language syntax
+
+With macros, you can extend Clojure to suit your problem
+space, building up the language
+```
+
 ---
 
-## Code as data
-
-``` clojure
-(foo bar baz qux)
-
-; code:
-; call the function bound to the name “foo”
-; with the values bound to the names “bar”, “baz” and “qux”.
-
-; data:
-; list of 4 symbols, “foo”, “bar”, “baz” and “qux”.
-
-(+ 1 1) ; 2
-'(+ 1 1 ) ; a list of a function and two numbers 
-```
+<CodeSurfer
+  title="Code as data"
+  code={require("!raw-loader!snippets/code-as-data.cljs")}
+  lang="java"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { notes: "What is macro?"},
+    { range: [1, 8], notes: "" },
+    { range: [10, 11], notes: "evaluates to 3" },
+    { range: [13, 14], notes: "this simply 'quotes' it's content" }
+  ]}
+/>
 
 ---
 
@@ -71,13 +81,3 @@ import { Image } from 'mdx-deck'
 - [Netflix](https://speakerdeck.com/daveray/clojure-at-netflix)
 - [SoundCloud](http://blog.josephwilk.net/clojure/building-clojure-services-at-scale.html)
 - [More](https://github.com/clojure/clojurescript-site/blob/master/content/community/companies.adoc)
-
----
-
-## Where to learn?
-
-- [Clojure koans](http://clojurekoans.com/)
-- [clojure-for-the-brave-and-true](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-- [purelyfunctional.tv](https://purelyfunctional.tv/)
-- [clojuredocs.org](https://clojuredocs.org/)
-- [awesome-clojure](https://github.com/razum2um/awesome-clojure)

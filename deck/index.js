@@ -4,9 +4,7 @@ import clojurescript from './clojurescript.mdx'
 import tooling from './tooling.mdx'
 import reagentIntro from './reagent-intro.mdx'
 import reagentUsage from './reagent-usage.mdx'
-import styling from './styling.mdx'
 import reactNative from './react-native.mdx'
-import reframe from './reframe.mdx'
 import outro from './outro.mdx'
 
 export { default as theme } from 'theme'
@@ -18,8 +16,6 @@ export default [
   ...tooling,
   ...reagentIntro,
   ...reagentUsage,
-  ...styling,
   ...reactNative,
-  ...reframe,
   ...outro
 ]

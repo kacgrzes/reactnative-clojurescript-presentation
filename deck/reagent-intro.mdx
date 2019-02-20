@@ -1,13 +1,38 @@
+import { CodeSurfer } from "mdx-deck-code-surfer"
+import { CodeSurferSplit } from 'components'
+
 # React
 
-- where is React in ClojureScript?
+where is React in ClojureScript?
 
 ---
 
-## Hiccup syntax
-
-- simple data structure
-- compared to JSX which is a syntax extension to JavaScript
+<CodeSurferSplit
+  title={"Hiccup"}
+  codeTop={require("!raw-loader!snippets/hiccup.cljs")}
+  codeBottom={require("!raw-loader!snippets/hiccup.html")}
+  langTop="java"
+  langBottom="html"
+  showNumbers={false}
+  stepsTop={[
+    { notes: "What is hiccup"},
+    { lines: [1], notes: "" },
+    { lines: [3], notes: "" },
+    { lines: [5], notes: "" },
+    { lines: [7], notes: "" },
+    { lines: [9], notes: "" },
+    { range: [11, 14], notes: "" },
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { lines: [1]},
+    { lines: [3]},
+    { lines: [5]},
+    { lines: [7]},
+    { lines: [9]},
+    { range: [11, 14]}
+  ]}
+/>
 
 ---
 
@@ -23,63 +48,63 @@
 
 ```jsx
 function ({ text }) {
-  return React.createComponent('div', { className: 'app' }, text)
+  return React.createElement('div', { className: 'app' }, text)
 }
 ```
 
 ```clojure
 (fn [text]
-  (js/React.createComponent "div" #js { "class" "app" } text))
+  (js/React.createElement "div" #js { :className "app" } text))
 ```
 
 ---
 
-## [Om](https://github.com/omcljs/om)
-
-```clojure
-(ns om-tutorial.core
-  (:require [goog.dom :as gdom]
-            [om.next :as om :refer-macros [defui]]
-            [om.dom :as dom]))
-
-(defui HelloWorld
-  Object
-  (render [this]
-    (dom/div nil (get (om/props this) :title))))
-
-(def hello (om/factory HelloWorld))
-
-(js/ReactDOM.render
-  (hello {:title "Hello, world!"})
-  (gdom/getElement "app"))
-```
+<CodeSurfer
+  title={'Om Next'}
+  code={require("!raw-loader!snippets/om-next.cljs")}
+  lang="java"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { notes: "How does Om wrap React?"},
+    { range: [1, 4], notes: "ns definition and imports" },
+    { range: [6, 11], notes: "component definition" },
+    { range: [12, 15], notes: "render in DOM" }
+  ]}
+/>
 
 ---
 
-## Rum
-
-```clojure
-(ns rum-example.core
-  (:require [rum.core :as rum]))
-
-(rum/defc hello [text]
-  [:div "Hello " text])
-
-(defn refresh []
-  (rum/mount (hello "Reactup!") (js/document.getElementById "mount")))
-```
+<CodeSurfer
+  title={'Rum'}
+  code={require("!raw-loader!snippets/rum.cljs")}
+  lang="java"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { notes: "How does Rum wrap React?"},
+    { range: [1, 2], notes: "ns definition and imports" },
+    { range: [4, 5], notes: "component definition" },
+    { range: [7, 8], notes: "render in DOM" }
+  ]}
+/>
 
 ---
 
-## Reagent
-```clojure
-(ns example
-  (:require [reagent.core :as r]))
+<CodeSurfer
+  title={'Reagent'}
+  code={require("!raw-loader!snippets/reagent.cljs")}
+  lang="java"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { notes: "How does Reagent wrap React?"},
+    { range: [1, 2], notes: "ns definition and imports" },
+    { range: [4, 5], notes: "component definition" },
+    { range: [7, 9], notes: "render in DOM" }
+  ]}
+/>
 
-(defn hello [text]
-  [:div text])
+---
 
-(defn init []
-  (r/render [hello]
-    (.getElementById js/document "app")))
-```
+## What would you pick?

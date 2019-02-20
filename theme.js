@@ -1,6 +1,6 @@
 import { dark } from 'mdx-deck/themes'
-import nightOwl from "prism-react-renderer/themes/nightOwl"
-import okaidia from 'react-syntax-highlighter/styles/prism/okaidia'
+import nightOwlSurfer from "prism-react-renderer/themes/nightOwl"
+import nightOwl from './prism.js'
 import clojure from 'react-syntax-highlighter/languages/prism/clojure'
 
 // THEMES:
@@ -21,8 +21,14 @@ import clojure from 'react-syntax-highlighter/languages/prism/clojure'
 // swiss
 // yellow
 
+console.log(nightOwlSurfer)
+
 const theme = {
   ...dark,
+  colors: {
+    ...dark.colors,
+    background: 'rgb(1, 22, 39)'
+  },
   fontSizes: [
     "0.75em",
     "1em",
@@ -31,11 +37,11 @@ const theme = {
     "3em",
   ],
   codeSurfer: {
-    ...nightOwl,
+    ...nightOwlSurfer,
     showNumbers: false
   },
   prism: {
-    style: okaidia,
+    style: nightOwl,
     languages: {
       clojure
     }

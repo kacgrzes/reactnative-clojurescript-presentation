@@ -1,4 +1,5 @@
 import { Example } from 'components'
+import { CodeSurferSplit } from 'components'
 
 # ClojureScript
 
@@ -24,154 +25,163 @@ semantics.
 
 ---
 
-<Example
-  title={'Basics'}
-  cljs={[
-    '"string"',
-    '; Cannot use single quote strings',
-    'true false',
-    'nil',
-    ':keyword',
-    '42',
-    '223.44'
+<CodeSurferSplit
+  title={"Basics"}
+  codeTop={require("!raw-loader!snippets/basics.cljs")}
+  codeBottom={require("!raw-loader!snippets/basics.js")}
+  langTop="java"
+  langBottom="java"
+  showNumbers={false}
+  stepsTop={[
+    { notes: "What is macro?"},
+    { lines: [1], notes: "double quote string" },
+    { lines: [2], notes: "single quote string" },
+    { lines: [3], notes: "booleans" },
+    { lines: [4], notes: "nothing" },
+    { lines: [5], notes: "keywords" },
+    { lines: [6], notes: "int numbers" },
+    { lines: [7], notes: "float numbers" },
   ]}
-  js={[
-    '"string"',
-    "'string'",
-    'true false',
-    'null',
-    '// Does not support keywords',
-    '42',
-    '223.44'
-  ]}
-/>
-
----
-
-<Example
-  title={'Collections'}
-  cljs={[
-    '[1 2 3 4] ; vector',
-    '{:one 1 :two 2} ; map',
-    '#{1 2 3} ; set'
-  ]}
-  js={[
-    '[1, 2, 3, 4] // array',
-    '{one 1, two 2} // object',
-    'new Set(1, 2, 3) // set'
+  stepsBottom={[
+    { notes: "What is macro?"},
+    { lines: [1]},
+    { lines: [2]},
+    { lines: [3]},
+    { lines: [4]},
+    { lines: [5]},
+    { lines: [6]},
+    { lines: [7]},
   ]}
 />
 
 ---
 
-<Example
-  title={'Functions'}
-  cljs={[
-    `; NOTE: there are no operators in Clojure / ClojureScript, "+" is just a normal function
-(defn sum [x y] (+ x y))`,
-    '(sum 3 4)',
-    '(fn [x y] (+ x y))',
-    '(#(+ %1 %2))',
-    '(def sum #(+ %1 %2))',
-  ]}
-  js={[
-    `function sum(x, y) {
-  retrun x + y
-}`,
-    'sum(3, 4)',
-    `function (x, y) {
-  retrun x + y
-}`,
-    '(x, y) => x + y',
-    'const sum = (x, y) => x + y',
-  ]}
-/>
-
----
-
-<Example
-  title={'Flow control'}
-  cljs={[
-    '(when (= lang "de") "german") ; if without else',
-    '(if (= lang "de") "german" "english) ; if with else',
-    `; if with multiple elses
-(defn which-lang
-  [lang]
-  (cond
-    (= lang "de") "german"
-    (= lang "es") "spanish"
-    :else "english"))`
-  ]}
-  js={[
-    `if (lang === 'de') {
-  return 'german';
-}`,
-    `if (lang === 'de') {
-  return 'german';
-} else {
-  return 'english';
-}`, `function whichLang(lang) {
-  if (lang === 'de') {
-    return 'german';
-  } else if (lang === 'es') {
-    return 'spanish';
-  } else {
-    return 'english';
+<CodeSurferSplit
+  title={"Collections"}
+  codeTop={
+    `
+[1 2 3 4]
+{:one 1 :two 2}
+#{1 2 3}
+    `
   }
-}`
-  ]}
-/>
-
----
-
-<Example
-  title={'More flow control'}
-  cljs={[
-    `; switch
-(defn which-lang
-  [lang]
-  (case lang
-    "de" "german"
-    "es" "spanish"
-    "english"))
-`
-  ]}
-  js={[`function whichLang(lang) {
-  switch (lang) {
-    case 'de':
-      return 'german';
-    case 'es':
-      return 'spanish';
-    default:
-      return 'english';
+  codeBottom={
+    `
+[1, 2, 3, 4]
+{one 1, two 2}
+new Set(1, 2, 3)
+    `
   }
-}`
+  langTop="java"
+  langBottom="js"
+  showNumbers={false}
+  stepsTop={[
+    { notes: "What about collections?"},
+    { lines: [2], notes: "vector vs arrays" },
+    { lines: [3], notes: "map vs object" },
+    { lines: [4], notes: "set vs set" }
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { lines: [2]},
+    { lines: [3]},
+    { lines: [4]}
   ]}
 />
 
 ---
 
-<Example
-  title={'Interop'}
-  cljs={[
-    `; Method call
-(.log js/console "Hello")`,
-    `; Property access
-(.-PI js/Math)`,
-    `; Property setting
-(set! (.-title js/document) "Hello")`,
-    `; window method call
-(js/alert "Hello")`
+<CodeSurferSplit
+  title={"Functions"}
+  codeTop={require("!raw-loader!snippets/functions.cljs")}
+  codeBottom={require("!raw-loader!snippets/functions.js")}
+  langTop="java"
+  langBottom="js"
+  showNumbers={false}
+  stepsTop={[
+    { notes: "How about functions?"},
+    { lines: [1], notes: "function definition" },
+    { lines: [3], notes: "function call" },
+    { lines: [5], notes: "anonymous function definition" },
+    { lines: [7], notes: "short anonymous function definition" },
+    { lines: [9], notes: "assign short anonymous function to variable" }
   ]}
-  js={[
-    `// Method call
-console.log("Hello")`,
-    `// Property access
-Math.PI`,
-    `// Property setting
-num.one = 1`,
-    `// window method call
-alert("Hello")`
+  stepsBottom={[
+    { notes: ""},
+    { lines: [1,2,3] },
+    { lines: [5] },
+    { lines: [7,8,9] },
+    { lines: [11] },
+    { lines: [13] }
+  ]}
+/>
+
+---
+
+<CodeSurferSplit
+  title={"Flow control"}
+  codeTop={require("!raw-loader!snippets/flow-control.cljs")}
+  codeBottom={require("!raw-loader!snippets/flow-control.js")}
+  langTop="java"
+  langBottom="js"
+  showNumbers={false}
+  stepsTop={[
+    { notes: "How about functions?"},
+    { lines: [1], notes: "if without else" },
+    { lines: [3], notes: "if with else" },
+    { range: [5, 10], notes: "if with multiple elses" },
+    { range: [12, 17], notes: "switch" }
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { range: [1,3] },
+    { range: [5,9] },
+    { range: [11,19] },
+    { range: [21,30] }
+  ]}
+/>
+
+---
+
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
+<CodeSurfer
+  title="Macro example (offtop)"
+  code={require("!raw-loader!snippets/macro-example.cljs")}
+  lang="java"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { notes: "What is macro?"},
+    { range: [1, 6], notes: "We know what it does" },
+    { range: [8, 11], notes: "but how does it actually work?" },
+    { tokens: { 8: [2] }, notes: "Note for the third step" },
+    { range: [13, 17], notes: "Note for the third step" }
+  ]}
+/>
+
+---
+
+<CodeSurferSplit
+  title={"Interop"}
+  codeTop={require("!raw-loader!snippets/interop.cljs")}
+  codeBottom={require("!raw-loader!snippets/interop.js")}
+  langTop="java"
+  langBottom="java"
+  showNumbers={false}
+  stepsTop={[
+    { notes: "What is interop?"},
+    { lines: [1], notes: "Window method call" },
+    { lines: [3], notes: "Property access" },
+    { lines: [5], notes: "Property setting" },
+    { lines: [7], notes: "Method call" },
+  ]}
+  stepsBottom={[
+    { notes: "What is macro?"},
+    { lines: [1] },
+    { lines: [3] },
+    { lines: [5] },
+    { lines: [7] },
   ]}
 />
 
@@ -179,6 +189,7 @@ alert("Hello")`
 
 <Example
   title={'State'}
+  fontSize={'30px'}
   cljs={[
     '(atom {:one 1 :two 2}) ; atom'
   ]}
@@ -186,15 +197,3 @@ alert("Hello")`
     '// requires redux / mobx / or any other state management library'
   ]}
 />
-
----
-
-## Where to learn?
-
-- [ClojureScript koans](http://clojurescriptkoans.com/)
-- [magomimmo/modern-cljs](https://github.com/magomimmo/modern-cljs)
-- [clojurescriptmadeeasy.com](http://clojurescriptmadeeasy.com/)
-- [parens-of-the-dead](http://www.parens-of-the-dead.com/)
-- [clojurescript-unraveled](https://funcool.github.io/clojurescript-unraveled/)
-- [cljsbook](http://langintro.com/cljsbook/)
-- [awesome-clojurescript](https://github.com/hantuzun/awesome-clojurescript)
