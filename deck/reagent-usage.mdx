@@ -1,45 +1,131 @@
-import { Example } from 'components'
+import { Example, CodeSurferSplit } from 'components'
 
 # Reagent
 
 ---
 
-<Example
-  cljs={require("!raw-loader!snippets/1.cljs")}
-  js={[
-    require("!raw-loader!snippets/1.js"),
-    require("!raw-loader!snippets/1-2.js"),
+<CodeSurferSplit
+  title={"Form-1 component"}
+  codeTop={require("!raw-loader!snippets/1.cljs")}
+  codeBottom={require("!raw-loader!snippets/1.js")}
+  langTop="java"
+  langBottom="jsx"
+  stepsTop={[
+    { notes: "simple hello world"},
+    { lines: [1], notes: "namespace definition vs imports" },
+    { range: [3, 6], notes: "component definition" },
+    { range: [3, 6], notes: "component export" }
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { lines: [1]},
+    { range: [3, 11]},
+    { lines: [13]}
   ]}
 />
 
 ---
 
-<Example
-  fontSize={"14px"}
-  cljs={require("!raw-loader!snippets/2.cljs")}
-  js={require("!raw-loader!snippets/2.js")}
+<CodeSurferSplit
+  title={"Form-2 component"}
+  codeTop={require("!raw-loader!snippets/2.cljs")}
+  codeBottom={require("!raw-loader!snippets/2.js")}
+  langTop="java"
+  langBottom="jsx"
+  stepsTop={[
+    { notes: "component with state"},
+    { range: [1, 2], notes: "namespace definition and imports" },
+    { range: [4, 16], notes: "component definition" },
+    { lines: [7], notes: "state declaration" },
+    { lines: [12], notes: "attach state"},
+    { range: [4, 16], notes: "component export" }
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { lines: [1]},
+    { range: [3, 24]},
+    { lines: [4] },
+    { lines: [15]},
+    { lines: [26]}
+  ]}
 />
 
 ---
 
-<Example
-  fontSize={"14px"}
-  cljs={require("!raw-loader!snippets/2.cljs")}
-  js={require("!raw-loader!snippets/2-2.js")}
+<CodeSurferSplit
+  title={"Form-2 component with hook"}
+  codeTop={require("!raw-loader!snippets/2.cljs")}
+  codeBottom={require("!raw-loader!snippets/2-2.js")}
+  langTop="java"
+  langBottom="jsx"
+  showNumbers
+  stepsTop={[
+    { notes: "component with state"},
+    { range: [1, 2], notes: "namespace definition and imports" },
+    { range: [4, 16], notes: "component definition" },
+    { lines: [7], notes: "state declaration" },
+    { lines: [12], notes: "attach state"},
+    { lines: [8], notes: "handler definition"},
+    { lines: [16], notes: "attach handler"},
+    { range: [4, 16], notes: "component export" }
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { lines: [1]},
+    { range: [3, 15]},
+    { lines: [4] },
+    { lines: [9]},
+    { lines: [5]},
+    { lines: [10]},
+    { lines: [17]}
+  ]}
 />
 
 ---
 
-<Example
-  fontSize={"14px"}
-  cljs={require("!raw-loader!snippets/3.cljs")}
-  js={require("!raw-loader!snippets/3.js")}
+<CodeSurferSplit
+  title={"Form-3 component"}
+  codeTop={require("!raw-loader!snippets/3.cljs")}
+  codeBottom={require("!raw-loader!snippets/3.js")}
+  langTop="java"
+  langBottom="jsx"
+  showNumbers
+  stepsTop={[
+    { notes: "component with lifecycles"},
+    { range: [8, 10], notes: "lifecycle definition" },
+    { range: [11, 15], notes: "render" },
+    { notes: ""},
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { range: [14, 18]},
+    { range: [20, 27]},
+    { notes: ""}
+  ]}
 />
 
 ---
 
-<Example
-  fontSize={"14px"}
-  cljs={require("!raw-loader!snippets/3-2.cljs")}
-  js={require("!raw-loader!snippets/3-2.js")}
+<CodeSurferSplit
+  title={"Form-2 component and lifecycles"}
+  codeTop={require("!raw-loader!snippets/3-2.cljs")}
+  codeBottom={require("!raw-loader!snippets/3-2.js")}
+  langTop="java"
+  langBottom="jsx"
+  stepsTop={[
+    { notes: "component with hooks and lifecycles"},
+    { lines: [5], notes: "state definition" },
+    { lines: [6], notes: "handler definition" },
+    { lines: [8], notes: "timer with lifecycles setup" },
+    { range: [9, 10], notes: "render" },
+    { notes: ""},
+  ]}
+  stepsBottom={[
+    { notes: ""},
+    { lines: [4] },
+    { range: [14, 16]},
+    { range: [6, 12]},
+    { range: [18, 22]},
+    { notes: ""}
+  ]}
 />

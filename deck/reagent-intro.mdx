@@ -47,15 +47,17 @@ where is React in ClojureScript?
 ## React - without wrapper
 
 ```jsx
-function ({ text }) {
+function AppWithText ({ text }) {
   return React.createElement('div', { className: 'app' }, text)
 }
 ```
 
 ```clojure
-(fn [text]
+(defn app-with-text [text]
   (js/React.createElement "div" #js { :className "app" } text))
 ```
+
+### What about wrappers?
 
 ---
 

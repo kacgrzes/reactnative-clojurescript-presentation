@@ -63,6 +63,8 @@ class InnerCodeSurferSplit extends React.Component {
       showNumbers,
       prismTheme,
       notes,
+      height = '60vh',
+      scale = 0.85,
       theme,
       ...rest
     } = this.props;
@@ -105,8 +107,8 @@ class InnerCodeSurferSplit extends React.Component {
               alignItems: "center",
               justifyContent: "center",
               overflow: "hidden",
-              height: '60vh',
-              transform: "scale(0.8)"
+              height,
+              transform: `scale(${scale})`
             }}
             key="codeTop"
           >
@@ -127,8 +129,8 @@ class InnerCodeSurferSplit extends React.Component {
               alignItems: "center",
               justifyContent: "center",
               overflow: "hidden",
-              height: '60vh',
-              transform: "scale(0.85)"
+              height,
+              transform: `scale(${scale})`
             }}
             key="codeBottom"
           >

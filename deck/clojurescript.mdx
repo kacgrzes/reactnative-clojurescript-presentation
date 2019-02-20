@@ -126,7 +126,7 @@ new Set(1, 2, 3)
   langBottom="js"
   showNumbers={false}
   stepsTop={[
-    { notes: "How about functions?"},
+    { notes: "if / else / case?"},
     { lines: [1], notes: "if without else" },
     { lines: [3], notes: "if with else" },
     { range: [5, 10], notes: "if with multiple elses" },
@@ -172,9 +172,9 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
   stepsTop={[
     { notes: "What is interop?"},
     { lines: [1], notes: "Window method call" },
-    { lines: [3], notes: "Property access" },
-    { lines: [5], notes: "Property setting" },
-    { lines: [7], notes: "Method call" },
+    { lines: [3], notes: "Method call" },
+    { lines: [5], notes: "Property access" },
+    { lines: [7], notes: "Property setting" },
   ]}
   stepsBottom={[
     { notes: "What is macro?"},
@@ -194,6 +194,8 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
     '(atom {:one 1 :two 2}) ; atom'
   ]}
   js={[
-    '// requires redux / mobx / or any other state management library'
+    `// requires redux / mobx /'
+// or any other state management
+// library'`
   ]}
 />
