@@ -6,7 +6,8 @@
     "prod": "env/prod"
   },
   "modules": [
-    "react-navigation"
+    "react-navigation",
+    "react-native-vector-icons/Ionicons"
   ],
   "imageDirs": [
     "images"

@@ -1,3 +1,5 @@
+; https://github.com/priornix/antizer/blob/master/src/antizer/core.cljs
+
 (ns re-native.core
   (:require [reagent.core :as r]))
 
