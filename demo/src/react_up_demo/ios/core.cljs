@@ -37,8 +37,7 @@
        [circle-button-with-icon {:icon-name "ios-arrow-back" :icon-size 24}]
        [view {:style (get-in s [:buttons-row])}
         [minus-button]
-        [power-button]
-        [add-button]]
+        [power-button]]
        [volume-slider
         {:min 0
          :max 10

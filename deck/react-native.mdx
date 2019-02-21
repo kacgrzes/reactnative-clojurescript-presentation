@@ -1,3 +1,5 @@
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
 # React Native
 
 ---
@@ -22,6 +24,39 @@ https://github.com/re-native
 
 ---
 
-## Example apps
+<CodeSurfer
+  title={'React Native'}
+  code={require("!raw-loader!snippets/native.cljs")}
+  lang="java"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { notes: "react native wrappers" },
+    { lines: [4], notes: "react native itself" },
+    { range: [9, 10], notes: "wrapper example with class adapt" }
+  ]}
+/>
 
-- [cljs-react-native-tictactoe](https://github.com/mjmeintjes/cljs-react-native-tictactoe)
+---
+
+<CodeSurfer
+  title={'React Navigation'}
+  code={require("!raw-loader!snippets/navigation.cljs")}
+  lang="java"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { notes: "react navigation wrapper"},
+    { range: [8,9], notes: "cljs->js" }
+  ]}
+/>
+
+---
+
+## REPL example
+
+![repl](images/react-native-1.gif)
+
+---
+
+## code overview
